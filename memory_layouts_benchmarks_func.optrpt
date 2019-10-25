@@ -1,0 +1,772 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.5.281 Build 20190815
+
+Compiler options: -lm -O3 -qopenmp -march=native -std=gnu11 -Wall -o test.out -qopt-report=5 -qopt-report-phase=vec
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(123,5) inlined into memory_layouts_benchmarks_func.c(293,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(124,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(125,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(126,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(127,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(128,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(129,25) ]
+   remark #15382: vectorization support: call to function ?1memset cannot be vectorized   [ memory_layouts_benchmarks_func.c(130,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (124:23) and call:?1memset (130:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:?1memset (130:9) and call:drand48(void) (124:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(295,5)
+   remark #15416: vectorization support: non-unit strided store was generated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->px>, stride is 9   [ memory_layouts_benchmarks_func.c(163,13) ]
+   remark #15416: vectorization support: non-unit strided store was generated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->py>, stride is 9   [ memory_layouts_benchmarks_func.c(164,13) ]
+   remark #15416: vectorization support: non-unit strided store was generated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(165,13) ]
+   remark #15416: vectorization support: non-unit strided store was generated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->px>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->py>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(156,54) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pid>, stride is 9   [ memory_layouts_benchmarks_func.c(158,37) ]
+   remark #15416: vectorization support: non-unit strided store was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(159,5) ]
+   remark #15305: vectorization support: vector length 16
+   remark #15309: vectorization support: normalized vectorization overhead 0.014
+   remark #15300: LOOP WAS VECTORIZED
+   remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15452: unmasked strided loads: 12 
+   remark #15453: unmasked strided stores: 5 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 244 
+   remark #15477: vector cost: 66.180 
+   remark #15478: estimated potential speedup: 3.680 
+   remark #15482: vectorized math library calls: 1 
+   remark #15486: divides: 3 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(123,5) inlined into memory_layouts_benchmarks_func.c(304,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(124,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(125,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(126,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(127,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(128,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(129,25) ]
+   remark #15382: vectorization support: call to function ?1memset cannot be vectorized   [ memory_layouts_benchmarks_func.c(130,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (124:23) and call:?1memset (130:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:?1memset (130:9) and call:drand48(void) (124:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(306,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(307,36)
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->px>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->py>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(156,54) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pid>, stride is 9   [ memory_layouts_benchmarks_func.c(158,37) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(159,5) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->px>, stride is 9   [ memory_layouts_benchmarks_func.c(163,13) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->py>, stride is 9   [ memory_layouts_benchmarks_func.c(164,13) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(165,13) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.028
+      remark #15300: LOOP WAS VECTORIZED
+      remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+      remark #15452: unmasked strided loads: 12 
+      remark #15453: unmasked strided stores: 5 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 244 
+      remark #15477: vector cost: 66.620 
+      remark #15478: estimated potential speedup: 3.510 
+      remark #15482: vectorized math library calls: 1 
+      remark #15486: divides: 3 
+      remark #15487: type converts: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(307,36)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(123,5) inlined into memory_layouts_benchmarks_func.c(316,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(124,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(125,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(126,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(127,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(128,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(129,25) ]
+   remark #15382: vectorization support: call to function ?1memset cannot be vectorized   [ memory_layouts_benchmarks_func.c(130,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (124:23) and call:?1memset (130:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:?1memset (130:9) and call:drand48(void) (124:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(318,5)
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->px>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->py>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(156,54) ]
+   remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pid>, stride is 9   [ memory_layouts_benchmarks_func.c(158,37) ]
+   remark #15416: vectorization support: non-unit strided store was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(159,5) ]
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.047
+   remark #15300: LOOP WAS VECTORIZED
+   remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15452: unmasked strided loads: 5 
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 218 
+   remark #15477: vector cost: 37.620 
+   remark #15478: estimated potential speedup: 5.790 
+   remark #15482: vectorized math library calls: 1 
+   remark #15486: divides: 3 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(321,5)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->py>, stride is 9   [ memory_layouts_benchmarks_func.c(164,13) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(165,13) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->px>, stride is 9   [ memory_layouts_benchmarks_func.c(163,13) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.012
+   remark #15452: unmasked strided loads: 7 
+   remark #15453: unmasked strided stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 26 
+   remark #15477: vector cost: 40.500 
+   remark #15478: estimated potential speedup: 0.640 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(123,5) inlined into memory_layouts_benchmarks_func.c(328,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(124,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(125,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(126,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(127,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(128,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(129,25) ]
+   remark #15382: vectorization support: call to function ?1memset cannot be vectorized   [ memory_layouts_benchmarks_func.c(130,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (124:23) and call:?1memset (130:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:?1memset (130:9) and call:drand48(void) (124:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(330,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(331,36)
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->px>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->py>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(156,42) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(156,54) ]
+      remark #15415: vectorization support: non-unit strided load was generated for the variable <part->pid>, stride is 9   [ memory_layouts_benchmarks_func.c(158,37) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <part->e>, stride is 9   [ memory_layouts_benchmarks_func.c(159,5) ]
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.047
+      remark #15300: LOOP WAS VECTORIZED
+      remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+      remark #15452: unmasked strided loads: 5 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 218 
+      remark #15477: vector cost: 37.620 
+      remark #15478: estimated potential speedup: 5.560 
+      remark #15482: vectorized math library calls: 1 
+      remark #15486: divides: 3 
+      remark #15487: type converts: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(331,36)
+   <Remainder loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(334,36)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->x>, stride is 9   [ memory_layouts_benchmarks_func.c(163,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->px>, stride is 9   [ memory_layouts_benchmarks_func.c(163,13) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->y>, stride is 9   [ memory_layouts_benchmarks_func.c(164,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->py>, stride is 9   [ memory_layouts_benchmarks_func.c(164,13) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->z>, stride is 9   [ memory_layouts_benchmarks_func.c(165,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->pz>, stride is 9   [ memory_layouts_benchmarks_func.c(165,13) ]
+      remark #15416: vectorization support: non-unit strided store was generated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <p->t>, stride is 9   [ memory_layouts_benchmarks_func.c(166,5) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.006
+      remark #15452: unmasked strided loads: 7 
+      remark #15453: unmasked strided stores: 4 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 26 
+      remark #15477: vector cost: 43.000 
+      remark #15478: estimated potential speedup: 0.600 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(207,5) inlined into memory_layouts_benchmarks_func.c(342,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(208,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(209,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(210,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(211,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(212,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(213,25) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (208:23) and call:drand48(void) (213:25)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (213:25) and call:drand48(void) (208:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(346,5)
+<Peeled loop for vectorization>
+   remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,25) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,34) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,42) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,50) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,35) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,43) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,27) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.215
+   remark #15301: PEEL LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15450: unmasked unaligned unit stride loads: 7 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.370 
+   remark #15478: estimated potential speedup: 5.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(346,5)
+   remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,25) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,34) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,42) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,50) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,35) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,43) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,27) ]
+   remark #15388: vectorization support: reference *x has aligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15388: vectorization support: reference *x has aligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15309: vectorization support: normalized vectorization overhead 0.121
+   remark #15300: LOOP WAS VECTORIZED
+   remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 8 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 267 
+   remark #15477: vector cost: 35.180 
+   remark #15478: estimated potential speedup: 7.580 
+   remark #15482: vectorized math library calls: 1 
+   remark #15486: divides: 3 
+   remark #15487: type converts: 3 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(346,5)
+<Remainder loop for vectorization>
+   remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,25) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,34) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,42) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(347,50) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,35) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,43) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(348,27) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.215
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15450: unmasked unaligned unit stride loads: 7 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.370 
+   remark #15478: estimated potential speedup: 5.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(207,5) inlined into memory_layouts_benchmarks_func.c(355,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(208,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(209,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(210,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(211,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(212,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(213,25) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (208:23) and call:drand48(void) (213:25)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (213:25) and call:drand48(void) (208:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(357,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(360,36)
+   <Peeled loop for vectorization>
+      remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,29) ]
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,38) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,46) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,54) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(362,31) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(362,39) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(362,47) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.215
+      remark #15301: PEEL LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15450: unmasked unaligned unit stride loads: 7 
+      remark #15451: unmasked unaligned unit stride stores: 4 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 40 
+      remark #15477: vector cost: 6.370 
+      remark #15478: estimated potential speedup: 5.080 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(360,36)
+      remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,29) ]
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,38) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,46) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(361,54) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(362,31) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(362,39) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(362,47) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.239
+      remark #15300: LOOP WAS VECTORIZED
+      remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+      remark #15450: unmasked unaligned unit stride loads: 9 
+      remark #15451: unmasked unaligned unit stride stores: 5 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 267 
+      remark #15477: vector cost: 35.500 
+      remark #15478: estimated potential speedup: 7.000 
+      remark #15482: vectorized math library calls: 1 
+      remark #15486: divides: 3 
+      remark #15487: type converts: 3 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(360,36)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(207,5) inlined into memory_layouts_benchmarks_func.c(369,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(208,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(209,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(210,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(211,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(212,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(213,25) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (208:23) and call:drand48(void) (213:25)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (213:25) and call:drand48(void) (208:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(371,5)
+<Peeled loop for vectorization>
+   remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,25) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,34) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,42) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,50) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.166
+   remark #15301: PEEL LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15450: unmasked unaligned unit stride loads: 7 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.370 
+   remark #15478: estimated potential speedup: 5.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(371,5)
+   remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,25) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,34) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,42) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,50) ]
+   remark #15388: vectorization support: reference *e has aligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+   remark #15388: vectorization support: reference *e has aligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.166
+   remark #15300: LOOP WAS VECTORIZED
+   remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 227 
+   remark #15477: vector cost: 27.870 
+   remark #15478: estimated potential speedup: 8.140 
+   remark #15482: vectorized math library calls: 1 
+   remark #15486: divides: 3 
+   remark #15487: type converts: 3 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(371,5)
+<Remainder loop for vectorization>
+   remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,25) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,34) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,42) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(372,50) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+   remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.166
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15450: unmasked unaligned unit stride loads: 7 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.370 
+   remark #15478: estimated potential speedup: 5.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(374,5)
+<Peeled loop for vectorization>
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,43) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,35) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,27) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.632
+   remark #15301: PEEL LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15450: unmasked unaligned unit stride loads: 7 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.370 
+   remark #15478: estimated potential speedup: 5.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(374,5)
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,43) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,35) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,27) ]
+   remark #15388: vectorization support: reference *x has aligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15388: vectorization support: reference *x has aligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15309: vectorization support: normalized vectorization overhead 0.449
+   remark #15300: LOOP WAS VECTORIZED
+   remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 6 
+   remark #15451: unmasked unaligned unit stride stores: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.120 
+   remark #15478: estimated potential speedup: 6.530 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(374,5)
+<Remainder loop for vectorization>
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+   remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,43) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+   remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,35) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+   remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(375,27) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 0.632
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15450: unmasked unaligned unit stride loads: 7 
+   remark #15451: unmasked unaligned unit stride stores: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 40 
+   remark #15477: vector cost: 6.370 
+   remark #15478: estimated potential speedup: 5.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(207,5) inlined into memory_layouts_benchmarks_func.c(381,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(208,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(209,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(210,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(211,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(212,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(213,25) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (208:23) and call:drand48(void) (213:25)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (213:25) and call:drand48(void) (208:23)
+LOOP END
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(383,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(384,36)
+   <Peeled loop for vectorization>
+      remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,29) ]
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,38) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,46) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,54) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.166
+      remark #15301: PEEL LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15450: unmasked unaligned unit stride loads: 7 
+      remark #15451: unmasked unaligned unit stride stores: 4 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 40 
+      remark #15477: vector cost: 6.370 
+      remark #15478: estimated potential speedup: 5.080 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(384,36)
+      remark #15389: vectorization support: reference pids[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,29) ]
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,38) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,46) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(385,54) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(240,60) ]
+      remark #15389: vectorization support: reference *e has unaligned access   [ memory_layouts_benchmarks_func.c(243,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.166
+      remark #15300: LOOP WAS VECTORIZED
+      remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+      remark #15450: unmasked unaligned unit stride loads: 5 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 227 
+      remark #15477: vector cost: 27.870 
+      remark #15478: estimated potential speedup: 7.600 
+      remark #15482: vectorized math library calls: 1 
+      remark #15486: divides: 3 
+      remark #15487: type converts: 3 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(384,36)
+   <Remainder loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(387,36)
+   <Peeled loop for vectorization>
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(388,31) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(388,39) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(388,47) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.632
+      remark #15301: PEEL LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15450: unmasked unaligned unit stride loads: 7 
+      remark #15451: unmasked unaligned unit stride stores: 4 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 40 
+      remark #15477: vector cost: 6.370 
+      remark #15478: estimated potential speedup: 5.080 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(387,36)
+      remark #15389: vectorization support: reference pxs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(388,31) ]
+      remark #15389: vectorization support: reference pys[i] has unaligned access   [ memory_layouts_benchmarks_func.c(388,39) ]
+      remark #15389: vectorization support: reference pzs[i] has unaligned access   [ memory_layouts_benchmarks_func.c(388,47) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *x has unaligned access   [ memory_layouts_benchmarks_func.c(248,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *y has unaligned access   [ memory_layouts_benchmarks_func.c(249,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *z has unaligned access   [ memory_layouts_benchmarks_func.c(250,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15389: vectorization support: reference *t has unaligned access   [ memory_layouts_benchmarks_func.c(251,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.863
+      remark #15300: LOOP WAS VECTORIZED
+      remark #26013: Compiler has chosen to target XMM/YMM vector. Try using -qopt-zmm-usage=high to override
+      remark #15450: unmasked unaligned unit stride loads: 7 
+      remark #15451: unmasked unaligned unit stride stores: 4 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 40 
+      remark #15477: vector cost: 6.370 
+      remark #15478: estimated potential speedup: 5.080 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at memory_layouts_benchmarks_func.c(387,36)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: create_particles_3d_aos(unsigned int, particle_3d **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(123,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(124,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(125,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(126,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(127,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(128,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(129,25) ]
+   remark #15382: vectorization support: call to function ?1memset cannot be vectorized   [ memory_layouts_benchmarks_func.c(130,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:drand48(void) (124:23) and particles (130:27)
+   remark #15346: vector dependence: assumed OUTPUT dependence between particles (130:27) and call:drand48(void) (124:23)
+LOOP END
+===========================================================================
+
+Begin optimization report for: create_particles_3d_soa(unsigned int, int **, float **, float **, float **, float **, float **, float **, float **, float **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at memory_layouts_benchmarks_func.c(207,5)
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(208,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(209,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(210,23) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(211,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(212,25) ]
+   remark #15382: vectorization support: call to function drand48(void) cannot be vectorized   [ memory_layouts_benchmarks_func.c(213,25) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between call:drand48(void) (208:23) and *es (222:11)
+   remark #15346: vector dependence: assumed ANTI dependence between *es (222:11) and call:drand48(void) (208:23)
+LOOP END
+===========================================================================
